@@ -1,0 +1,132 @@
+.container {
+  background-color: #f1f2f4;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 50px;
+}
+
+.social_icons {
+  display: flex;
+  width: 246px;
+  height: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+.social_icons > * {
+  cursor: pointer;
+}
+
+.social_icons > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.social_icons > div > span {
+  padding-left: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #17505c;
+  line-height: 100%;
+}
+
+.details {
+  display: flex;
+  width: 266px;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+  color: #17505c;
+  line-height: 100%;
+}
+.details > * {
+  cursor: pointer;
+}
+
+.details p:nth-child(3) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.details p:not(:last-child) {
+  border-right: 1.5px solid #17505c;
+  padding-right: 10px;
+}
+.show {
+  position: absolute;
+  top: 2px;
+  padding: 0;
+  right: -1px;
+  width: 53px;
+  height: 102px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  font-weight: 500;
+  font-size: 14;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  background-color: #fff;
+  z-index: 9;
+}
+.hide {
+  visibility: hidden;
+  position: absolute;
+  top: 1px;
+  z-index: 2;
+  padding: 0;
+  right: -6px;
+  width: 53px;
+  height: 102px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  font-weight: 500;
+  font-size: 14;
+  background-color: #fff;
+}
+.seconed_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  height: 84px;
+}
+.seconed_container > * {
+  cursor: pointer;
+}
+.auth_buttons {
+  display: flex;
+  gap: 10px;
+}
+.auth_buttons > * {
+  width: 120px;
+  height: 42px;
+  border-radius: 8px;
+  border: none;
+  text-transform: capitalize;
+}
+.auth_buttons > button:nth-child(1) {
+  background-color: #ff914d;
+  font-size: 16px;
+  font-weight: 600;
+}
+.auth_buttons > button:nth-child(2) {
+  background-color: #fff;
+  color: #ff914d;
+  border: 1.5px solid #ff914d;
+  font-size: 16px;
+  font-weight: 600;
+}

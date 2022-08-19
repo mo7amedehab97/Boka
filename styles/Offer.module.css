@@ -1,0 +1,141 @@
+.container {
+  height: 950px;
+  background-color: #fffaf8;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ads_box {
+  width: 90vw;
+  height: 280px;
+  border-radius: 16px;
+  background-color: #ffe9db;
+  margin-top: 75px;
+  position: relative;
+}
+.ads_box > * {
+  width: 200px;
+  height: 90px;
+  padding: 5px;
+}
+
+.mother_icon {
+  position: absolute;
+  right: 58px;
+  top: -12px;
+}
+.ads_title {
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  text-align: start;
+  white-space: nowrap;
+}
+
+.ads_title > h1 {
+  width: 575px;
+  height: 47px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 49.8px;
+  color: #02323d;
+}
+.ads_title > p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: #02323d;
+}
+.love_icons {
+  position: absolute;
+  left: 0;
+}
+.love_icons :nth-child(1) > * {
+  left: 147px;
+}
+.love_icons :nth-child(2) > * {
+  left: 30px;
+  top: -25px;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+  height: 49px;
+  margin-top: 1rem;
+  align-items: center;
+}
+.title_text > h1 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 49px;
+  color: #02323d;
+}
+.title_slide_icons {
+  display: flex;
+}
+.title_slide_icons :nth-child(1) {
+  margin: 0 50px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22.4px;
+  color: #ff914d;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.arrow_container {
+  width: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.arrow_container > * {
+  cursor: pointer;
+}
+.offerlist_container {
+  height: 462px;
+  width: 90vw;
+  border: 1px solid #02323d;
+  margin-top: 24px;
+  display: flex;
+  overflow: hidden;
+}
+.offerbox_container {
+  width: 300px;
+  min-width: 300px;
+  height: 462px;
+  border-radius: 8px;
+  border: 1px solid #edf3f4;
+  margin: 0 15px;
+}
+.offerbox_details {
+  width: 268px;
+  height: 186px;
+  margin: 15px 16px 0;
+  border: 1px solid #02323d;
+}
+.offerbox_price {
+  width: 268px;
+  height: 40px;
+  background-color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+.offerbox_price p {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 19.1px;
+  color: #17505c;
+}
+.offerbox_price h1 {
+  font-weight: 700;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 24.59px;
+  color: #02323d;
+}
