@@ -3,6 +3,14 @@ import Navbar from '../component/Navbar/Navbar'
 import Banner from '../component/Banner/Banner'
 import Slider from '../component/Slider/Slider'
 import Offer from '../component/Offer/Offer'
+import PopularBusines from '../component/PopularBusiness/PopularBusines'
+import FeaturedBusinesses from '../component/FeaturedBusiness/FeaturedBusinesses'
+import HairSalon from '../component/HairSalon/HairSalon'
+import BokaTransitions from '../component/BokaTransitions/BokaTransitions'
+import PopularCategory from '../component/PopularCategory/PopularCategory'
+import CustomerReviews from '../component/CustomersReviews/CustomerReviews'
+import Footer from '../component/Footer/Footer'
+import Parteners from '../component/Parteners/Parteners'
 
 export default function Home() {
   return (
@@ -20,6 +28,14 @@ export default function Home() {
       <Banner />
       <Slider />
       <Offer />
+      <PopularBusines />
+      <FeaturedBusinesses />
+      <HairSalon />
+      <BokaTransitions />
+      <PopularCategory />
+      <CustomerReviews />
+      <Parteners />
+      <Footer />
     </div>
   )
 }

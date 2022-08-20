@@ -8,6 +8,7 @@ const Offer = () => {
       <AdsBox />
    
       <OfferList />
+
     </section>
   )
 }

@@ -28,3 +28,7 @@ a {
 button {
   cursor: pointer;
 }
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  color: #ff914d !important;
+}

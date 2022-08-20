@@ -1,0 +1,108 @@
+.footer_container {
+  padding: 2rem 4rem 1rem 4rem;
+  background-color: #f9f9f9;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 120px;
+  margin-bottom: 1rem;
+}
+
+.footer_main {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer_section {
+  width: 19%;
+  min-width: 200px;
+  padding: 1px;
+}
+.footer_section p {
+  color: #6b7c80;
+}
+.footer_section h4 {
+  color: #02323d;
+  font-size: 18px;
+}
+
+.ul_header {
+  color: #02323d;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+.footer_ul ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer_ul ul li {
+  color: #6b7c80;
+  margin-bottom: 0.5rem;
+}
+.footer_ul ul li:last-child {
+  margin-bottom: 1.2rem;
+}
+.footer_ul ul li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.social_containter {
+  display: flex;
+  gap: 1rem;
+}
+
+.social_containter div {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a4c1c8;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transition: all 0.2s ease-in-out;
+}
+.social_containter div:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+
+.footer_licenseing {
+  width: 100%;
+}
+
+.footer_licenseing ul {
+  display: flex;
+  gap: 2rem;
+  color: #6b7c80;
+  list-style-type: none;
+  width: 100%;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.footer_licenseing ul li:last-child {
+  margin-left: auto;
+}
+.footer_booking {
+  width: 100%;
+  color: #6b7c80;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer_booking p {
+  width: 30%;
+  line-height: 1.5;
+  margin-right: auto;
+}
