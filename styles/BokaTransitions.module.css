@@ -42,10 +42,36 @@
   width: 878px;
   height: 417px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  border-radius: 16px;
+  position: relative;
+}
+.boka_details_images img {
+  object-fit: cover;
+  border-radius: 32px;
+}
+.boka_details_images h2:nth-child(1) {
+  position: absolute;
+  z-index: 9;
+  top: 5%;
+  right: 15%;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 49px;
+  color: #02323d;
 }
 
+.boka_details_images h2:last-child {
+  position: absolute;
+  z-index: 9;
+  bottom: 5%;
+  left: 8%;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 49px;
+  color: #fff;
+}
 .boka_details_profile {
   width: 297px;
   height: 250px;
@@ -53,60 +79,6 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-}
-.boka_image_circle {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.boka_image_circle span {
-  width: 5px;
-  height: 100%;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.boka_image_circle :nth-child(2) {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-color: #fff;
-  z-index: 120;
-  text-align: center;
-}
-.image_after,
-.image_before {
-  position: relative;
-}
-
-.image_after h1 {
-  position: absolute;
-  top: 5%;
-  right: 15%;
-  width: 88px;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 49.18px;
-  color: #02323d;
-  height: 49px;
-}
-.image_before h1 {
-  position: absolute;
-  bottom: 5%;
-  left: 15%;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 49.18px;
-  color: #fff;
-  height: 49px;
-}
-.image_after img {
-  transform: rotateX(180deg);
 }
 
 .boka_details_profile p:nth-child(1) {
@@ -138,6 +110,6 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 22.3px;
-  color: #FF914D;
+  color: #ff914d;
   margin-top: 4px;
 }

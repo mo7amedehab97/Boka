@@ -101,6 +101,7 @@
   display: flex;
   overflow: hidden;
 }
+
 .offerbox_container {
   width: 300px;
   min-width: 300px;
@@ -108,6 +109,11 @@
   border-radius: 8px;
   border: 1px solid #edf3f4;
   margin: 0 15px;
+  transition: all 1s ease-in-out;
+}
+.offerbox_container:hover {
+  transform: translateY(-1%);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .offerbox_details {
   width: 268px;

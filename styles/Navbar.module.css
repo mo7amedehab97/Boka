@@ -58,9 +58,9 @@
 }
 .show {
   position: absolute;
-  top: 2px;
+  top: 16px;
   padding: 0;
-  right: -1px;
+  right: 42px;
   width: 53px;
   height: 102px;
   border-radius: 8px;
@@ -82,7 +82,7 @@
   top: 1px;
   z-index: 2;
   padding: 0;
-  right: -6px;
+  right: -5px;
   width: 53px;
   height: 102px;
   border-radius: 8px;
