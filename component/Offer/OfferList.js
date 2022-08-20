@@ -1,6 +1,14 @@
 import styles from '../../styles/Offer.module.css'
 import Image from 'next/image'
-import OfferBox from './OfferBox';
+import OfferBox from './OfferBox'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+import 'swiper/css/scrollbar'
+
+import { Navigation, Mousewheel, Scrollbar } from 'swiper'
 const OfferList = () => {
   return (
     <section>
@@ -10,20 +18,63 @@ const OfferList = () => {
         </div>
         <div className={styles.title_slide_icons}>
           <div>View all</div>
-
-          <div className={styles.arrow_container}>
-            <Image src="/Right.svg" width={11.5} alt="" height={20} />
-            <Image src="/Left.svg" width={11.5} alt="" height={20} />
-          </div>
         </div>
       </article>
-          <article className={styles.offerlist_container}>
-              <OfferBox />
-              <OfferBox />
-              <OfferBox />
-              <OfferBox />
-              <OfferBox />
-
+      <article className={styles.offerlist_container}>
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={0}
+          slidesPerGroup={4}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          navigation={true}
+          mousewheel={true}
+          direction={'horizontal'}
+          modules={[Navigation, Mousewheel, Scrollbar]}
+        >
+          <SwiperSlide>
+            <OfferBox />
+          </SwiperSlide>
+          <SwiperSlide>
+            <OfferBox />
+          </SwiperSlide>
+          <SwiperSlide>
+            <OfferBox />
+          </SwiperSlide>
+          <SwiperSlide>
+            <OfferBox />
+          </SwiperSlide>
+          <SwiperSlide>
+            <OfferBox />
+          </SwiperSlide>
+          <SwiperSlide>
+            <OfferBox />
+          </SwiperSlide>
+          <SwiperSlide>
+            <OfferBox />
+          </SwiperSlide>
+          <SwiperSlide>
+            <OfferBox />
+          </SwiperSlide>
+          <SwiperSlide>
+            <OfferBox />
+          </SwiperSlide>
+          <SwiperSlide>
+            <OfferBox />
+          </SwiperSlide>
+          <SwiperSlide>
+            <OfferBox />
+          </SwiperSlide>
+          <SwiperSlide>
+            <OfferBox />
+          </SwiperSlide>
+          <SwiperSlide>
+            <OfferBox />
+          </SwiperSlide>
+          <SwiperSlide>
+            <OfferBox />
+          </SwiperSlide>
+        </Swiper>
       </article>
     </section>
   )
