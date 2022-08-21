@@ -12,19 +12,17 @@ const BokaTransitions = () => {
         </div>
         <div className={styles.boka_details}>
           <div className={styles.boka_details_images}>
-          <h2>after</h2>
-
             <ImageSlider
               image1="/After.png"
               image2="/Before.png"
               sliderColor="#fff"
               handleColor="#fff"
+              leftLabelText="Before"
+              rightLabelText="After"
               onSlide={() => {
                 console.log('sliding')
               }}
             />
-                      <h2>Before</h2>
-
           </div>
           <div className={styles.boka_details_profile}>
             <p>
