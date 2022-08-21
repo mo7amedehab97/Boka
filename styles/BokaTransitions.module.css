@@ -48,35 +48,12 @@
   position: relative;
 }
 .boka_details_images img {
+   width: 878px;
+  height: 417px;
   object-fit: cover;
   border-radius: 32px;
 }
-.label__text.label__right {
-  position: absolute;
-  top: 0;
-  background-color: red !important;
-}
-/* .boka_details_images h2:nth-child(1) {
-  position: absolute;
-  z-index: 9;
-  top: 5%;
-  right: 15%;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 49px;
-  color: #02323d;
-}
 
-.boka_details_images h2:last-child {
-  position: absolute;
-  z-index: 9;
-  bottom: 5%;
-  left: 8%;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 49px;
-  color: #fff;
-} */
 
 .boka_details_profile {
   width: 297px;

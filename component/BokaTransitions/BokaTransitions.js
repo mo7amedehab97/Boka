@@ -1,7 +1,14 @@
 import styles from '../../styles/BokaTransitions.module.css'
 import Image from 'next/image'
-import ImageSlider from 'react-image-comparison-slider'
+import ReactBeforeSliderComponent from 'react-before-after-slider-component'
+import 'react-before-after-slider-component/dist/build.css'
 
+const FIRST_IMAGE = {
+  imageUrl: '/Before.png',
+}
+const SECOND_IMAGE = {
+  imageUrl: '/After.png',
+}
 const BokaTransitions = () => {
   return (
     <section className={styles.container}>
@@ -12,16 +19,9 @@ const BokaTransitions = () => {
         </div>
         <div className={styles.boka_details}>
           <div className={styles.boka_details_images}>
-            <ImageSlider
-              image1="/After.png"
-              image2="/Before.png"
-              sliderColor="#fff"
-              handleColor="#fff"
-              leftLabelText="Before"
-              rightLabelText="After"
-              onSlide={() => {
-                console.log('sliding')
-              }}
+            <ReactBeforeSliderComponent
+              firstImage={FIRST_IMAGE}
+              secondImage={SECOND_IMAGE}
             />
           </div>
           <div className={styles.boka_details_profile}>
