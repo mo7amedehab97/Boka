@@ -48,12 +48,11 @@
   position: relative;
 }
 .boka_details_images img {
-   width: 878px;
+  width: 878px;
   height: 417px;
   object-fit: cover;
   border-radius: 32px;
 }
-
 
 .boka_details_profile {
   width: 297px;
