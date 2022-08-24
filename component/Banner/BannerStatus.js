@@ -5,19 +5,13 @@ const BannerStatus = () => {
   return (
     <section className={styles.banner_status}>
       <article className={styles.banner_coulmn_holder}>
-        <div className={styles.banner_coulmn_1}>
-          <div>
-            {' '}
-            <Image src="/Solid.svg" width={13.3} alt="" height={13.3} />
-          </div>
-          <div>
-            {' '}
-            <Image src="/Solid.svg" width={13.3} alt="" height={13.3} />
-          </div>
-        </div>
-        <div className={styles.banner_coulmn_2}>
-          <div>At home </div>
-          <div></div>Business
+        <div>
+          <input type="checkbox" name="busniess" id="busniess" />
+          <label htmlFor="busniess">For Busniess</label>
+        </div>{' '}
+        <div>
+          <input type="checkbox" name="home" id="home" />
+          <label htmlFor="home">At Home</label>
         </div>
       </article>
       <article className={styles.status_details}>

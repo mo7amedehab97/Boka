@@ -1,11 +1,11 @@
 .container {
-  height: 612px;
   background-image: url('/Salon.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
+  height: 612px;
 }
 .inner_container {
   display: flex;
@@ -16,7 +16,7 @@
   width: 50vw;
 }
 .banner_title {
-  width: 702px;
+  width: 52vw;
   display: flex;
   flex-direction: column;
   color: #fff;
@@ -40,6 +40,7 @@
 }
 .banner_search {
   display: flex;
+  gap: 12px;
 }
 
 .banner_status {
@@ -49,19 +50,17 @@
   width: 504px;
 }
 .search_input {
-  display: flex;
-  margin-left: 12px;
   position: relative;
 }
 .search_box_icon {
   position: absolute;
   top: 20px;
-  left: 12px;
+  left: 5%;
   z-index: 99;
 }
 
 .search_input :nth-child(2) > input {
-  width: 288px;
+  width: 300px;
   height: 60px;
   border-radius: 8px;
   border: none;
@@ -77,12 +76,10 @@
 .cancel_box_icon {
   position: absolute;
   top: 20px;
-  right: 12px;
+  right: 5%;
   z-index: 99;
 }
-.search_button {
-  margin-left: 12px;
-}
+
 .search_button button {
   width: 120px;
   height: 60px;
@@ -117,7 +114,13 @@
 .banner_coulmn_holder {
   display: flex;
   justify-content: center;
-  align-items: center;
+  gap: 5px;
+  flex-direction: column;
+}
+.banner_coulmn_holder label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
   color: #02323d;
 }
 .status_details {
@@ -142,10 +145,14 @@
     flex-direction: column;
     justify-content: center;
     width: 300px;
+    padding: 10px;
   }
 
   .container {
-    height: 90vh;
+    height: 100vh;
+  }
+  .inner_container {
+    height: 100vh;
   }
   .banner_search {
     display: flex;
@@ -153,6 +160,7 @@
     justify-content: center;
     align-items: center;
     width: 300px;
+    gap: 0px;
   }
   .banner_status {
     display: flex;
@@ -167,7 +175,7 @@
     height: 64px;
     margin: 12px 0;
   }
- 
+
   .search_box_icon {
     left: 15px;
   }
@@ -178,11 +186,50 @@
     width: 300px;
     height: 48px;
     padding: 0;
-    margin: 0 16px 0 0;
   }
   .status_details {
     border: none;
     margin: auto 0;
     padding: 0;
+  }
+
+  .banner_title h1 {
+    font-size: 36px;
+    line-height: 50px;
+  }
+  .banner_title {
+    width: 90vh;
+  }
+}
+
+@media (max-width: 800px) {
+  .banner_title {
+    width: 80vw;
+  }
+  .banner_title h1 {
+    font-size: 32px;
+  }
+}
+@media (max-width: 580px) {
+  .banner_title {
+    width: 80vw;
+  }
+  .banner_title h1 {
+    font-size: 23px;
+    line-height: 42px;
+  }
+  .banner_title p {
+    font-size: 12px;
+    line-height: 42px;
+  }
+}
+@media (max-width: 580px) {
+  .banner_title h1 {
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .banner_title p {
+    font-size: 12px;
+    line-height: 42px;
   }
 }
