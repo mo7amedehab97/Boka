@@ -1,16 +1,27 @@
 import Image from 'next/image'
 import styles from '../../styles/Offer.module.css'
-import ServicesTimeButton from './ServicesTimeButton';
+import ServicesTimeButton from './ServicesTimeButton'
 import ServicesTypeButton from './ServicesTypeButton'
-const OfferBox = () => {
+const OfferBox = ({
+  imageUrl,
+  title,
+  address,
+  services,
+  reviewsNo,
+  rating,
+  bookedTodayNo,
+  price,
+  discountPrice,
+  discountValue,
+}) => {
   return (
     <section className={styles.offerbox_container}>
       <div className={styles.offerbox_image}>
-        <Image src="/Box-image-1.svg" width={298} alt="" height={136} />
+        <Image src={imageUrl} width={298} alt="" height={136} />
       </div>
       <div className={styles.offerbox_details}>
         <div className={styles.offerbox_details_title}>
-          <h1>Hair X Pression Unisex Hair..</h1>
+          <h1>{title}</h1>
           <div className={styles.reviews_star}>
             {' '}
             <Image src="/Full.svg" width={13.3} alt="" height={12.7} />{' '}
@@ -20,24 +31,24 @@ const OfferBox = () => {
             <Image src="/Half.svg" width={13.3} alt="" height={12.7} />{' '}
           </div>
           <span>
-            (26 Reviews) <strong>4.1</strong>
+            ({reviewsNo} Reviews) <strong>{rating}</strong>
           </span>
         </div>
         <div className={styles.offerbox_location}>
           <p>
             <strong>5 mile away </strong>
-            400 S 2nd St Louisville, KY 40202
+            {address}
           </p>
           <Image src="/Location.svg" width={16} alt="" height={19.9} />
         </div>
         <div className={styles.offerbox_services}>
           <div className={styles.offerbox_services_type}>
             <div className={styles.type_button_container}>
-              <ServicesTypeButton />
-              <ServicesTypeButton />
-              <ServicesTypeButton />
-              <ServicesTypeButton />
-              <ServicesTypeButton />
+              {services.map((service) => {
+                return (
+                  <ServicesTypeButton key={service.id} name={service.nameEn} />
+                )
+              })}
             </div>
             <div className={styles.type_button_arrow}>
               <Image src="/Left.svg" width={7.7} alt="" height={13.3} />{' '}
@@ -52,11 +63,11 @@ const OfferBox = () => {
         </div>
       </div>
       <div className={styles.offerbox_price}>
-        <p>Booked x today</p>
+        <p> Booked {bookedTodayNo} today</p>
         <div className={styles.offerbox_price_details}>
-          <span>$31.99</span>
+          <span>${discountPrice || 0}</span>
           <h2>
-            $28.35 <span>20%</span>
+            ${price} <span>{discountValue || 0}%</span>
           </h2>
         </div>
       </div>

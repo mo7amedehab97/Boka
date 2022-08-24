@@ -28,7 +28,25 @@ a {
 button {
   cursor: pointer;
 }
-.swiper-button-next:after,
-.swiper-button-prev:after {
-  color: #ff914d !important;
+
+.label__right {
+  top: 15% !important;
+  right: 5% !important;
+  font-weight: 700 !important;
+  font-size: 36px !important;
+  background-color: transparent !important;
+  line-height: 49px !important;
+  box-shadow: none !important;
+  border: none !important;
+  color: #02323d !important;
+}
+.label__text {
+  color: #02323d !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  line-height: 49px !important;
+  top: 80% !important;
+  left: 15% !important;
+  font-weight: 700 !important;
+  font-size: 36px !important;
 }

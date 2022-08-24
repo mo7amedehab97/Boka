@@ -11,6 +11,9 @@ const SeconedNavbar = () => {
         <button>sign up</button>
         <button>log in</button>
       </div>
+         <div className={styles.burger_menu}>
+   <span></span><span></span><span></span>
+      </div>
     </div>
   )
 }

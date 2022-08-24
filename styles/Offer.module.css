@@ -1,13 +1,28 @@
 .container {
   height: 950px;
   background-color: #fffaf8;
-  width: 100%;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
 }
+.offer_list_container {
+  max-width: 1290px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inner_container {
+  max-width: 1290px;
+  width: 95vw;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .ads_box {
   width: 90vw;
+  max-width: 1290px;
   height: 280px;
   border-radius: 16px;
   background-color: #ffe9db;
@@ -61,7 +76,7 @@
 .title {
   display: flex;
   justify-content: space-between;
-  width: 90vw;
+  max-width: 1290px;
   height: 49px;
   margin-top: 1rem;
   align-items: center;
@@ -75,30 +90,44 @@
 .title_slide_icons {
   display: flex;
 }
-.title_slide_icons :nth-child(1) {
-  margin: 0 50px;
+.viewall_button {
+  margin: 0 38px;
+  height: 49px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.viewall_button button {
+  background-color: transparent;
+  border: none;
+  text-align: center;
   font-weight: 500;
   font-size: 16px;
   line-height: 22.4px;
   color: #ff914d;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
 }
-.arrow_container {
+
+.arrows_container {
   width: 60px;
+  height: 49px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.arrow_container > * {
-  cursor: pointer;
+/* .true {
+  border: 1px solid green;
 }
+.false {
+  border: 1px solid red;
+} */
+
 .offerlist_container {
   height: 462px;
-  width: 90vw;
+  max-width: 1290px;
   margin-top: 24px;
   display: flex;
+
   overflow: hidden;
 }
 
@@ -240,6 +269,8 @@
   z-index: 9;
 }
 .type_button_container {
+  width: 100%;
+
   overflow: hidden;
   display: flex;
   flex-wrap: nowrap;
@@ -257,6 +288,7 @@
   color: #17505c;
   font-size: 14px;
   text-align: center;
+  white-space: nowrap;
 }
 .type_button_container :nth-child(1) {
   background-color: #ff914d;
@@ -288,4 +320,13 @@
 }
 .offerbox_services_time :nth-child(1) {
   margin-left: 0px;
+}
+
+@media (max-width: 1350px) {
+  .ads_title h1 {
+    font-size: 26px;
+  }
+  .ads_title p {
+    font-size: 16px;
+  }
 }

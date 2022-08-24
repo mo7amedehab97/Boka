@@ -1,20 +1,34 @@
-import styles from '../../styles/BokaTransitions.module.css'
-import Image from 'next/image'
 import ReactBeforeSliderComponent from 'react-before-after-slider-component'
 import 'react-before-after-slider-component/dist/build.css'
+import { useState, useEffect } from 'react'
 
-const FIRST_IMAGE = {
-  imageUrl: '/Before.png',
-}
-const SECOND_IMAGE = {
-  imageUrl: '/After.png',
-}
-const BokaTransitions = () => {
+import styles from '../../styles/BokaTransitions.module.css'
+import Image from 'next/image'
+
+const BokaTransitions = ({ CaseStudies }) => {
+  const [caseStudies, setCaseStudies] = useState([])
+  const [provider, setProvider] = useState([])
+
+  useEffect(() => {
+    fetch('https://api.dev.boka.co/business-management/providers/1')
+      .then((res) => res.json())
+      .then((data) => {
+        setProvider(data)
+      })
+    setCaseStudies(CaseStudies)
+  }, [CaseStudies])
+  console.log(caseStudies.data?.[0])
+  const FIRST_IMAGE = {
+    imageUrl: caseStudies.data?.[0].imageAfterUrl,
+  }
+  const SECOND_IMAGE = {
+    imageUrl: caseStudies.data?.[0].imageBeforeUrl,
+  }
   return (
     <section className={styles.container}>
       <article className={styles.inner_container}>
         <div className={styles.boka_title}>
-          <h1> Boka Transformation</h1>
+          <h1> {caseStudies.data?.[0].nameEn}</h1>
           <button>Book Now</button>
         </div>
         <div className={styles.boka_details}>
@@ -25,16 +39,20 @@ const BokaTransitions = () => {
             />
           </div>
           <div className={styles.boka_details_profile}>
+            <p>{caseStudies.data?.[0].descEn}</p>
+            <div className={styles.boka_story_image}>
+              <div>
+                <Image src={provider.imageUrl} width={45} height={45} alt="" />
+              </div>
+
+              <p>
+                <strong>{provider.firstName}</strong>
+                {provider.jobTitle}{' '}
+              </p>
+            </div>
             <p>
-              Lorem ipsum dolor sit amet, cons ectetur adipiscing elit, sed do
-              eius mod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam...”
+              Book {provider.firstName} for ${caseStudies.data?.[0].price}
             </p>
-            <p>
-              <strong>Shoukri Kattan</strong>
-              Hair Specialist @boka
-            </p>
-            <p>Book Shoukri for $49</p>
           </div>
         </div>
       </article>

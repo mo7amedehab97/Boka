@@ -6,9 +6,8 @@ const Offer = () => {
   return (
     <section className={styles.container}>
       <AdsBox />
-   
-      <OfferList />
 
+      <OfferList />
     </section>
   )
 }

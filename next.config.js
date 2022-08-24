@@ -1,7 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
+module.exports = {
+  images: {
+    domains: [
+      'links.papareact.com',
+      'image.tmdb.org',
+      'dev-boka-files.s3.amazonaws.com',
+    ],
+  },
 }
-
-module.exports = nextConfig

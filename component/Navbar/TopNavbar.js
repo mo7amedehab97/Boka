@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import styles from '../../styles/Navbar.module.css'
 import Image from 'next/image'
+const r = ['EN', 'ES', 'FR']
 const TopNavbar = () => {
   const [showLanguage, setShowLanguage] = useState(false)
+  const [language, setLanguage] = useState('EN')
   return (
     <div className={styles.container}>
       <div className={styles.social_icons}>
@@ -17,8 +19,11 @@ const TopNavbar = () => {
       <div className={styles.details}>
         <p>For Business</p>
         <p>Help</p>
-        <div>
-          <span> EN </span>
+        <div className={styles.language_list}>
+          <span onClick={() => setShowLanguage(!showLanguage)}>
+            {' '}
+            {language}{' '}
+          </span>
           <Image
             src="/Arrow.svg"
             width={11}
@@ -27,9 +32,19 @@ const TopNavbar = () => {
             onClick={() => setShowLanguage(!showLanguage)}
           />
           <ul className={showLanguage ? styles.show : styles.hide}>
-            <li>EN</li>
-            <li>ES</li>
-            <li>FR</li>
+            {r.map((r, i) => {
+              return (
+                <li
+                  key={i}
+                  onClick={() => {
+                    setLanguage(r)
+                    setShowLanguage(!showLanguage)
+                  }}
+                >
+                  {r}
+                </li>
+              )
+            })}
           </ul>
         </div>
       </div>

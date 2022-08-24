@@ -1,32 +1,28 @@
 import styles from '../../styles/CustomersRevews.module.css'
 import Image from 'next/image'
-const ReviewBox = () => {
+import ReviewStars from './ReviewStars'
+const ReviewBox = ({ review }) => {
   return (
     <section className={styles.review_box}>
       <div className={styles.review_profile_title}>
-        <p>
-          Lorem ipsum dolor sit amet, cons ectetur adipiscing elit, sed do eius
-          mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam...”
-        </p>
+        <p>{review.descEn?.substring(0, 155)}</p>
       </div>
       <div className={styles.review_profile_stars}>
         {' '}
         <div className={styles.reviews_star}>
-          {' '}
-          <Image src="/Full.svg" width={13.3} alt="" height={12.7} />{' '}
-          <Image src="/Full.svg" width={13.3} alt="" height={12.7} />{' '}
-          <Image src="/Full.svg" width={13.3} alt="" height={12.7} />{' '}
-          <Image src="/Full.svg" width={13.3} alt="" height={12.7} />{' '}
-          <Image src="/Half.svg" width={13.3} alt="" height={12.7} />{' '}
+          <ReviewStars starsNumber={review.rating} />
         </div>
-        <span>Mohamed Ehab</span>
+        <span>{review.authorNameEn}</span>
       </div>
       <div className={styles.review_profile_person}>
         {' '}
+        <div>
+          {' '}
+          <Image src={review.authorImageUrl} width={45} height={45} alt="" />
+        </div>
         <p>
-          <strong> Anup Kanti Deb</strong>
-          Sylhet, Bangladesh{' '}
+          <strong> {review.authorNameEn}</strong>
+          {review.authorJobEn}{' '}
         </p>
       </div>
     </section>

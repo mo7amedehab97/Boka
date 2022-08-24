@@ -11,8 +11,10 @@ import PopularCategory from '../component/PopularCategory/PopularCategory'
 import CustomerReviews from '../component/CustomersReviews/CustomerReviews'
 import Footer from '../component/Footer/Footer'
 import Parteners from '../component/Parteners/Parteners'
+import { caseStudies, popularCategories } from '../component/Requsets'
+import MoreBusniess from '../component/MoreBusniess/MoreBusniess'
 
-export default function Home() {
+export default function Home({ CaseStudies, PopularCategories }) {
   return (
     <div>
       {' '}
@@ -31,11 +33,24 @@ export default function Home() {
       <PopularBusines />
       <FeaturedBusinesses />
       <HairSalon />
-      <BokaTransitions />
-      <PopularCategory />
+      <BokaTransitions CaseStudies={CaseStudies} />
+      <PopularCategory PopularCategories={PopularCategories} />
       <CustomerReviews />
       <Parteners />
+      <MoreBusniess />
       <Footer />
     </div>
   )
+}
+
+export async function getServerSideProps(context) {
+  const CaseStudies = await caseStudies()
+  const PopularCategories = await popularCategories()
+
+  return {
+    props: {
+      CaseStudies,
+      PopularCategories,
+    },
+  }
 }

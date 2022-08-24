@@ -9,19 +9,19 @@ const Parteners = () => {
       </div>
       <div className={styles.inner_container}>
         <div>
-          <Image src="/Parteners1.svg" width={120.3} alt="" height={25.7} />{' '}
+          <Image src="/Parteners1.svg" width={195} alt="" height={30} />{' '}
         </div>
         <div>
-          <Image src="/Parteners2.svg" width={120.3} alt="" height={25.7} />{' '}
+          <Image src="/Parteners2.svg" width={195} alt="" height={30} />{' '}
         </div>
         <div>
-          <Image src="/Parteners3.svg" width={120.3} alt="" height={25.7} />{' '}
+          <Image src="/Parteners3.svg" width={195} alt="" height={30} />{' '}
         </div>
         <div>
-          <Image src="/Parteners4.svg" width={120.3} alt="" height={25.7} />{' '}
+          <Image src="/Parteners4.svg" width={195} alt="" height={30} />{' '}
         </div>
         <div>
-          <Image src="/Parteners5.svg" width={128} alt="" height={30} />{' '}
+          <Image src="/Parteners5.svg" width={195} alt="" height={30} />{' '}
         </div>
       </div>
     </div>

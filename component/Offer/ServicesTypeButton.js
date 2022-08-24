@@ -1,8 +1,5 @@
-
-const ServicesTypeButton = () => {
-  return (
-    <button>Button</button>
-  )
+const ServicesTypeButton = ({ name }) => {
+  return <button>{name}</button>
 }
 
 export default ServicesTypeButton
