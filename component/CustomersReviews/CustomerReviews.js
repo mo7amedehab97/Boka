@@ -1,15 +1,8 @@
 import { useState, useEffect } from 'react'
 import styles from '../../styles/CustomersRevews.module.css'
 import ReviewBox from './ReviewBox'
-import { Swiper, SwiperSlide } from 'swiper/react'
 import Image from 'next/image'
 
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
-import 'swiper/css/scrollbar'
-
-import { Navigation, Mousewheel, Scrollbar } from 'swiper'
 
 const CustomerReviews = () => {
   const [reviews, setReviews] = useState([])
