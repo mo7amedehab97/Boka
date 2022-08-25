@@ -115,6 +115,9 @@
   justify-content: space-between;
   align-items: center;
 }
+.arrows_container > * {
+  cursor: pointer;
+}
 
 .offerlist_container {
   height: 462px;
@@ -325,13 +328,26 @@
     font-size: 16px;
   }
 }
-@media (max-width: 445px) {
+@media (max-width: 1000px) {
+  .ads_box {
+    display: none;
+  }
+  .container {
+    height: inherit;
+    padding: 2rem;
+  }
+}
+@media (max-width: 500px) {
   .title_text h1 {
-    font-size: 30px;
+    font-size: 24px;
     white-space: nowrap;
   }
 }
-@media (max-width: 320px) {
+@media (max-width: 390px) {
+  .title_text h1 {
+    font-size: 18px;
+    white-space: nowrap;
+  }
   .viewall_button {
     white-space: nowrap;
     display: none;

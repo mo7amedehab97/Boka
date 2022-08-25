@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import styles from '../../styles/PopularCategory.module.css'
 
-const PopularCategory = ({ PopularCategories, title }) => {
+const PopularCategory = ({ PopularCategories }) => {
   const [popularCategories, setPopularCategories] = useState([])
   const [loading, setLoading] = useState(false)
   const [width, setWidth] = useState(1400)
@@ -49,7 +49,7 @@ const PopularCategory = ({ PopularCategories, title }) => {
     <section className={styles.container}>
       <article className={styles.inner_container}>
         <section className={styles.category_title}>
-          <h1>{title}</h1>
+          <h1>Popular Categories</h1>
           <button>View all Category</button>
         </section>
         <section className={styles.category_image}>

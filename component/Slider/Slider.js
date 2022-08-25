@@ -45,7 +45,7 @@ const Slider = () => {
   return (
     <section className={styles.container}>
       <article className={styles.inner_container}>
-        <div>
+        <div className={styles.arrows}>
           <Image
             src="/Right.svg"
             width={11.54}
@@ -71,7 +71,7 @@ const Slider = () => {
             )
           })}
         </div>
-        <div>
+        <div className={styles.arrows}>
           <Image
             src="/Left.svg"
             width={11.54}
