@@ -121,8 +121,6 @@
   max-width: 1290px;
   margin-top: 24px;
   display: flex;
-
-  overflow: hidden;
 }
 
 .offerbox_container {
@@ -267,7 +265,6 @@
 }
 .type_button_container {
   width: 100%;
-
   overflow: hidden;
   display: flex;
   flex-wrap: nowrap;
