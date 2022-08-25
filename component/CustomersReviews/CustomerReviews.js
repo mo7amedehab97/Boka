@@ -3,19 +3,46 @@ import styles from '../../styles/CustomersRevews.module.css'
 import ReviewBox from './ReviewBox'
 import Image from 'next/image'
 
-
 const CustomerReviews = () => {
   const [reviews, setReviews] = useState([])
   const [offset, setOffset] = useState(0)
+  const [width, setWidth] = useState(1400)
+  const [limit, setLimit] = useState(4)
+  const [itemsNumber, setItemsNumber] = useState(4)
+
+  const updateDimensions = () => {
+    setWidth(window.innerWidth)
+  }
+  useEffect(() => {
+    window.addEventListener('resize', updateDimensions)
+    const updateWidth = () => {
+      if (Number(width) > 1385) {
+        setItemsNumber(4)
+        setLimit(4)
+      } else if (Number(width) <= 1385 && Number(width) >= 1050) {
+        setItemsNumber(3)
+        setLimit(3)
+      } else if (Number(width) <= 1049 && Number(width) >= 740) {
+        setItemsNumber(2)
+        setLimit(2)
+      } else {
+        setItemsNumber(1)
+        setLimit(1)
+      }
+    }
+    updateWidth()
+    return () => window.removeEventListener('resize', updateDimensions)
+  }, [width])
+
   useEffect(() => {
     fetch(
-      `https://api.dev.boka.co/content-management/customers-testimonials?limit=${4}&offset=${offset}&orderBy=orderNo&order=ASC`,
+      `https://api.dev.boka.co/content-management/customers-testimonials?limit=${limit}&offset=${offset}&orderBy=orderNo&order=ASC`,
     )
       .then((res) => res.json())
       .then((data) => {
         setReviews(data)
       })
-  }, [offset])
+  }, [offset, limit])
 
   return (
     <div className={styles.container}>
@@ -33,16 +60,18 @@ const CustomerReviews = () => {
               onClick={() => {
                 if (reviews.pageInfo.hasPreviousPage) {
                   setOffset((prev) => {
-                    return prev - 4
+                    return prev - itemsNumber
                   })
                 }
               }}
             />
           </div>
+          <div className={styles.customer_tetimonials}>
+            {reviews?.data?.map((review) => {
+              return <ReviewBox review={review} key={review.id} />
+            })}
+          </div>
 
-          {reviews?.data?.map((review) => {
-            return <ReviewBox review={review} key={review.id} />
-          })}
           <div className={styles.right_review_arrow}>
             <Image
               src="/ReviewRight.svg"
@@ -52,7 +81,7 @@ const CustomerReviews = () => {
               onClick={() => {
                 if (reviews.pageInfo.hasNextPage) {
                   setOffset((prev) => {
-                    return prev + 4
+                    return prev + itemsNumber
                   })
                 }
               }}

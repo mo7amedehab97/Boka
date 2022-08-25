@@ -155,3 +155,28 @@
     align-items: center;
   }
 }
+@media (max-width: 750px) {
+  .category_image {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .single_image,
+  .grid_image {
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 570px) {
+  .category_title h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 465px) {
+  .category_title h1 {
+    font-size: 24px;
+    white-space: nowrap;
+  }
+}

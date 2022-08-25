@@ -5,11 +5,43 @@ import styles from '../../styles/PopularCategory.module.css'
 const PopularCategory = ({ PopularCategories }) => {
   const [popularCategories, setPopularCategories] = useState([])
   const [loading, setLoading] = useState(false)
+  const [width, setWidth] = useState(1400)
+  const [imagewidth, setImageWidth] = useState(629)
+  const [imageHeight, setImageHeight] = useState(390)
 
   const newData = popularCategories.data?.slice(
     1,
     popularCategories.data.length,
   )
+
+  const updateDimensions = () => {
+    setWidth(window.innerWidth)
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', updateDimensions)
+    const updateWidth = () => {
+      if (Number(width) > 700) {
+        setImageWidth(629)
+        setImageHeight(390)
+      }
+     else if (Number(width) < 700) {
+        setImageWidth(529)
+        setImageHeight(340)
+      } else if (Number(width) <= 600) {
+        setImageWidth(429)
+        setImageHeight(290)
+      }  else if (Number(width) <= 580) {
+        setImageWidth(370)
+        setImageHeight(260)
+      }else {
+        setImageWidth(300)
+        setImageHeight(210)
+      }
+    }
+    updateWidth()
+    return () => window.removeEventListener('resize', updateDimensions)
+  }, [width])
   useEffect(() => {
     setPopularCategories(PopularCategories)
     setLoading(true)
@@ -27,9 +59,9 @@ const PopularCategory = ({ PopularCategories }) => {
               <span className={styles.layer}></span>
               <Image
                 src={loading && popularCategories.data[0].thumbnailUrl}
-                width={629}
+                width={imagewidth}
                 alt=""
-                height={390}
+                height={imageHeight}
               />{' '}
               <div className={styles.single_details}>
                 <p>
