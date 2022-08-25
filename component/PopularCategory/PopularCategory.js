@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import styles from '../../styles/PopularCategory.module.css'
 
-const PopularCategory = ({ PopularCategories }) => {
+const PopularCategory = ({ PopularCategories, title }) => {
   const [popularCategories, setPopularCategories] = useState([])
   const [loading, setLoading] = useState(false)
   const [width, setWidth] = useState(1400)
@@ -14,7 +14,7 @@ const PopularCategory = ({ PopularCategories }) => {
     popularCategories.data.length,
   )
 
-  const updateDimensions = () => {
+  const updateDimensions = ({ title }) => {
     setWidth(window.innerWidth)
   }
 
@@ -24,17 +24,16 @@ const PopularCategory = ({ PopularCategories }) => {
       if (Number(width) > 700) {
         setImageWidth(629)
         setImageHeight(390)
-      }
-     else if (Number(width) < 700) {
+      } else if (Number(width) < 700) {
         setImageWidth(529)
         setImageHeight(340)
       } else if (Number(width) <= 600) {
         setImageWidth(429)
         setImageHeight(290)
-      }  else if (Number(width) <= 580) {
+      } else if (Number(width) <= 580) {
         setImageWidth(370)
         setImageHeight(260)
-      }else {
+      } else {
         setImageWidth(300)
         setImageHeight(210)
       }
@@ -50,7 +49,7 @@ const PopularCategory = ({ PopularCategories }) => {
     <section className={styles.container}>
       <article className={styles.inner_container}>
         <section className={styles.category_title}>
-          <h1>Popular Category</h1>
+          <h1>{title}</h1>
           <button>View all Category</button>
         </section>
         <section className={styles.category_image}>

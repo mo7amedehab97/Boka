@@ -1,13 +1,12 @@
 import styles from '../../styles/Offer.module.css'
 import AdsBox from './AdsBox'
-import Image from 'next/image'
 import OfferList from './OfferList'
-const Offer = () => {
+const Offer = ({ title }) => {
   return (
     <section className={styles.container}>
       <AdsBox />
 
-      <OfferList />
+      <OfferList title={title} />
     </section>
   )
 }

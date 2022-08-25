@@ -29,15 +29,15 @@ export default function Home({ CaseStudies, PopularCategories }) {
       <Navbar />
       <Banner />
       <Slider />
-      <Offer />
-      <PopularBusines />
-      <FeaturedBusinesses />
-      <HairSalon />
+      <Offer title='Speical Offer'/>
+      <PopularBusines title='Popular Bussinesses'/>
+      <FeaturedBusinesses title='Featured Bussinesses'/>
+      <HairSalon title='Hair salon'/>
       <BokaTransitions CaseStudies={CaseStudies} />
       <PopularCategory PopularCategories={PopularCategories} />
       <CustomerReviews />
       <Parteners />
-      <MoreBusniess />
+      <MoreBusniess title='More Bussinesses'/>
       <Footer />
     </div>
   )

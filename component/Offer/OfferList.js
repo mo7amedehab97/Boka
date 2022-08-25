@@ -4,7 +4,7 @@ import styles from '../../styles/Offer.module.css'
 import Image from 'next/image'
 import OfferBox from './OfferBox'
 
-const OfferList = () => {
+const OfferList = ({ title }) => {
   const [business, setBusiness] = useState([])
   const [offset, setOffset] = useState(0)
   const [width, setWidth] = useState(1400)
@@ -49,7 +49,7 @@ const OfferList = () => {
       <div className={styles.inner_container}>
         <article className={styles.title}>
           <div className={styles.title_text}>
-            <h1>Spical offer</h1>
+            <h1>{title}</h1>
           </div>
           <div className={styles.title_slide_icons}>
             <div className={styles.viewall_button}>
