@@ -115,12 +115,6 @@
   justify-content: space-between;
   align-items: center;
 }
-/* .true {
-  border: 1px solid green;
-}
-.false {
-  border: 1px solid red;
-} */
 
 .offerlist_container {
   height: 462px;
@@ -139,6 +133,9 @@
   border: 1px solid #edf3f4;
   margin: 0 15px;
   transition: all 1s ease-in-out;
+}
+.offerbox_image img {
+  border-radius: 8px;
 }
 .offerbox_container:hover {
   transform: translateY(-1%);
@@ -328,5 +325,17 @@
   }
   .ads_title p {
     font-size: 16px;
+  }
+}
+@media (max-width: 445px) {
+  .title_text h1 {
+    font-size: 30px;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 320px) {
+  .viewall_button {
+    white-space: nowrap;
+    display: none;
   }
 }

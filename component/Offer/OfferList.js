@@ -7,15 +7,43 @@ import OfferBox from './OfferBox'
 const OfferList = () => {
   const [business, setBusiness] = useState([])
   const [offset, setOffset] = useState(0)
+  const [width, setWidth] = useState(1400)
+  const [limit, setLimit] = useState(4)
+  const [itemsNumber, setItemsNumber] = useState(4)
+
+  const updateDimensions = () => {
+    setWidth(window.innerWidth)
+  }
+  useEffect(() => {
+    window.addEventListener('resize', updateDimensions)
+    const updateWidth = () => {
+      if (Number(width) > 1350) {
+        setLimit(4)
+        setItemsNumber(4)
+      } else if (Number(width) >= 1047) {
+        setLimit(3)
+        setItemsNumber(3)
+      } else if (Number(width) >= 705) {
+        setLimit(2)
+        setItemsNumber(2)
+      } else {
+        setLimit(1)
+        setItemsNumber(1)
+      }
+    }
+    updateWidth()
+    return () => window.removeEventListener('resize', updateDimensions)
+  }, [width])
+
   useEffect(() => {
     fetch(
-      `https://api.dev.boka.co/business-management/businesses?limit=${4}&offset=${offset}`,
+      `https://api.dev.boka.co/business-management/businesses?limit=${limit}&offset=${offset}`,
     )
       .then((res) => res.json())
       .then((data) => {
         setBusiness(data)
       })
-  }, [offset])
+  }, [offset, limit])
   return (
     <section className={styles.offer_list_container}>
       <div className={styles.inner_container}>
@@ -36,7 +64,7 @@ const OfferList = () => {
                 onClick={() => {
                   if (business.pageInfo.hasPreviousPage) {
                     setOffset((prev) => {
-                      return prev - 4
+                      return prev - itemsNumber
                     })
                   }
                 }}
@@ -49,7 +77,7 @@ const OfferList = () => {
                 onClick={() => {
                   if (business.pageInfo.hasNextPage) {
                     setOffset((prev) => {
-                      return prev + 4
+                      return prev + itemsNumber
                     })
                   }
                 }}
