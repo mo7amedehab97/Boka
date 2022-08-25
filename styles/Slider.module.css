@@ -45,16 +45,17 @@
   line-height: 22.4px;
   color: #02323d;
 }
-/* 
-.slider_holder .left_arrow {
-  background-color: yellow;
-  z-index: 1;
-
-
+.disabled_left {
+  pointer-events: none;
+  cursor: not-allowed;
 }
-.slider_holder .right_arrow {
-  background-color: red;
-  position: absolute;
-  z-index: 1;
-
-} */
+.enabled_left {
+  cursor: pointer;
+}
+.disabled_right {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.enabled_right {
+  cursor: pointer;
+}

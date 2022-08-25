@@ -17,7 +17,6 @@ const BokaTransitions = ({ CaseStudies }) => {
       })
     setCaseStudies(CaseStudies)
   }, [CaseStudies])
-  console.log(caseStudies.data?.[0])
   const FIRST_IMAGE = {
     imageUrl: caseStudies.data?.[0].imageAfterUrl,
   }

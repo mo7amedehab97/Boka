@@ -6,32 +6,62 @@ import Story from './Story'
 const Slider = () => {
   const [categories, setCategories] = useState([])
   const [offset, setOffset] = useState(0)
+  const [width, setWidth] = useState(1400)
+  const [limit, setLimit] = useState(8)
+  const [cursorLeft, setCursorLeft] = useState(false)
+  const [cursorRight, setCursorRight] = useState(false)
+  const [itemsNumber, setItemsNumber] = useState(8)
+
+  const updateDimensions = () => {
+    setWidth(window.innerWidth)
+  }
 
   useEffect(() => {
+    window.addEventListener('resize', updateDimensions)
+    const updateWidth = () => {
+      if (Number(width) > 1118) {
+        setLimit(8)
+      } else if (Number(width) >= 800) {
+        setLimit(6)
+        setItemsNumber(6)
+      } else if (Number(width) >= 560) {
+        setLimit(4)
+        setItemsNumber(4)
+      } else {
+        setLimit(3)
+        setItemsNumber(3)
+      }
+    }
+    updateWidth()
+    return () => window.removeEventListener('resize', updateDimensions)
+  }, [width])
+  useEffect(() => {
     fetch(
-      `https://api.dev.boka.co/business-management/lookups/business-categories?limit=${8}&offset=${offset}`,
+      `https://api.dev.boka.co/business-management/lookups/business-categories?limit=${limit}&offset=${offset}`,
     )
       .then((res) => res.json())
       .then((data) => {
         setCategories(data)
       })
-  }, [offset])
+  }, [offset, limit, width])
   return (
     <section className={styles.container}>
       <article className={styles.inner_container}>
-        <div className={styles.right_arrow}>
+        <div className={cursorRight ? styles.disabled_right : styles.enabled_right}>
           <Image
             src="/Right.svg"
             width={11.54}
             alt=""
             height={20}
             onClick={() => {
-              if (offset <= 1) {
-                setOffset(31)
+              if (categories.pageInfo.hasPreviousPage) {
+                setCursorRight(false)
+                setOffset((prev) => {
+                  return prev - itemsNumber
+                })
+              } else {
+                setCursorRight(true)
               }
-              setOffset((prev) => {
-                return prev - 6
-              })
             }}
           />
         </div>
@@ -46,19 +76,22 @@ const Slider = () => {
             )
           })}
         </div>
-        <div className={styles.left_arrow}>
+        <div className={cursorLeft ? styles.disabled_left : styles.enabled_left}>
           <Image
             src="/Left.svg"
             width={11.54}
             alt=""
             height={20}
             onClick={() => {
-              if (offset >= 30) {
-                setOffset(0)
+              if (categories.pageInfo.hasNextPage) {
+                setCursorLeft(false)
+
+                setOffset((prev) => {
+                  return prev + itemsNumber
+                })
+              } else {
+                setCursorLeft(true)
               }
-              setOffset((prev) => {
-                return prev + 6
-              })
             }}
           />
         </div>
