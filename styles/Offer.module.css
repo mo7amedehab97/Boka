@@ -121,6 +121,7 @@
   max-width: 1290px;
   margin-top: 24px;
   display: flex;
+  justify-content: center;
 }
 
 .offerbox_container {
