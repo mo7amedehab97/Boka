@@ -8,8 +8,6 @@ const Slider = () => {
   const [offset, setOffset] = useState(0)
   const [width, setWidth] = useState(1400)
   const [limit, setLimit] = useState(8)
-  const [cursorLeft, setCursorLeft] = useState(false)
-  const [cursorRight, setCursorRight] = useState(false)
   const [itemsNumber, setItemsNumber] = useState(8)
 
   const updateDimensions = () => {
@@ -47,7 +45,7 @@ const Slider = () => {
   return (
     <section className={styles.container}>
       <article className={styles.inner_container}>
-        <div className={cursorRight ? styles.disabled_right : styles.enabled_right}>
+        <div>
           <Image
             src="/Right.svg"
             width={11.54}
@@ -55,12 +53,9 @@ const Slider = () => {
             height={20}
             onClick={() => {
               if (categories.pageInfo.hasPreviousPage) {
-                setCursorRight(false)
                 setOffset((prev) => {
                   return prev - itemsNumber
                 })
-              } else {
-                setCursorRight(true)
               }
             }}
           />
@@ -76,7 +71,7 @@ const Slider = () => {
             )
           })}
         </div>
-        <div className={cursorLeft ? styles.disabled_left : styles.enabled_left}>
+        <div>
           <Image
             src="/Left.svg"
             width={11.54}
@@ -84,14 +79,11 @@ const Slider = () => {
             height={20}
             onClick={() => {
               if (categories.pageInfo.hasNextPage) {
-                setCursorLeft(false)
 
                 setOffset((prev) => {
                   return prev + itemsNumber
                 })
-              } else {
-                setCursorLeft(true)
-              }
+              } 
             }}
           />
         </div>

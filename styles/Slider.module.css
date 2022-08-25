@@ -45,17 +45,3 @@
   line-height: 22.4px;
   color: #02323d;
 }
-.disabled_left {
-  pointer-events: none;
-  cursor: not-allowed;
-}
-.enabled_left {
-  cursor: pointer;
-}
-.disabled_right {
-  pointer-events: none;
-  cursor: not-allowed;
-}
-.enabled_right {
-  cursor: pointer;
-}
