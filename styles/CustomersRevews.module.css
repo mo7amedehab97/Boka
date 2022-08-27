@@ -122,3 +122,9 @@
   margin: 0;
   padding: 0;
 }
+.pointer {
+  cursor: pointer;
+}
+.denied {
+  cursor: not-allowed;
+}

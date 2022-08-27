@@ -9,7 +9,8 @@ const Slider = () => {
   const [width, setWidth] = useState(1400)
   const [limit, setLimit] = useState(8)
   const [itemsNumber, setItemsNumber] = useState(8)
-
+  const [rightCursor, setRightCursor] = useState(false)
+  const [leftCursor, setLefttCursor] = useState(true)
   const updateDimensions = () => {
     setWidth(window.innerWidth)
   }
@@ -52,12 +53,17 @@ const Slider = () => {
             alt=""
             height={20}
             onClick={() => {
-              if (categories.pageInfo.hasPreviousPage) {
+              if (categories.pageInfo?.hasPreviousPage) {
+                setRightCursor(true)
+                setLefttCursor(true)
                 setOffset((prev) => {
                   return prev - itemsNumber
                 })
+              } else {
+                setRightCursor(false)
               }
             }}
+            className={rightCursor ? styles.pointer : styles.denied}
           />
         </div>
         <div className={styles.stories_container}>
@@ -78,13 +84,17 @@ const Slider = () => {
             alt=""
             height={20}
             onClick={() => {
-              if (categories.pageInfo.hasNextPage) {
-
+              if (categories.pageInfo?.hasNextPage) {
+                setLefttCursor(true)
+                setRightCursor(true)
                 setOffset((prev) => {
                   return prev + itemsNumber
                 })
-              } 
+              } else {
+                setLefttCursor(false)
+              }
             }}
+            className={leftCursor ? styles.pointer : styles.denied}
           />
         </div>
       </article>

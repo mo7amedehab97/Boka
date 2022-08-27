@@ -9,6 +9,8 @@ const CustomerReviews = () => {
   const [width, setWidth] = useState(1400)
   const [limit, setLimit] = useState(4)
   const [itemsNumber, setItemsNumber] = useState(4)
+  const [rightCursor, setRightCursor] = useState(false)
+  const [leftCursor, setLefttCursor] = useState(true)
 
   const updateDimensions = () => {
     setWidth(window.innerWidth)
@@ -59,11 +61,16 @@ const CustomerReviews = () => {
               height={11}
               onClick={() => {
                 if (reviews.pageInfo.hasPreviousPage) {
+                  setRightCursor(true)
+                  setLefttCursor(true)
                   setOffset((prev) => {
                     return prev - itemsNumber
                   })
+                } else {
+                  setRightCursor(false)
                 }
               }}
+              className={rightCursor ? styles.pointer : styles.denied}
             />
           </div>
           <div className={styles.customer_tetimonials}>
@@ -80,11 +87,16 @@ const CustomerReviews = () => {
               height={11}
               onClick={() => {
                 if (reviews.pageInfo.hasNextPage) {
+                  setLefttCursor(true)
+                  setRightCursor(true)
                   setOffset((prev) => {
                     return prev + itemsNumber
                   })
+                } else {
+                  setLefttCursor(false)
                 }
               }}
+              className={leftCursor ? styles.pointer : styles.denied}
             />
           </div>
         </div>
